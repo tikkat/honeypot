@@ -1,10 +1,12 @@
 /* Modules & variables
 -------------------------------------*/
-var gulp          = require('gulp');
+var gulp          = require('gulp'),
     sass          = require('gulp-sass'),
     autoprefixer  = require('gulp-autoprefixer'),
     minifycss     = require('gulp-minify-css'),
-    rename        = require('gulp-rename');
+    rename        = require('gulp-rename'),
+    bourbon       = require('node-bourbon').includePaths,
+    neat          = require('node-neat').includePaths;
 
 
 /* Paths
@@ -41,6 +43,7 @@ gulp.task('styles', function() {
   return gulp.src(paths.scss)
   .pipe(sass({
     errLogToConsole: true,
+    includePaths: require('node-neat').includePaths,
     onError: function(err) {
       return notify().write(err);
     }
