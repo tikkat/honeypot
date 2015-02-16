@@ -30,7 +30,8 @@
     "rewire": "~2.0.0",
     "should": "~3.0.1",
     "sinon": "~1.7.3",
-    "tiny-lr": "^0.1.4"
+    "tiny-lr": "^0.1.4",
+    "gulp-imagemin": "~0.1.5"
   },
   "repository": {
     "type": "git",

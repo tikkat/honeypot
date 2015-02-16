@@ -5,6 +5,7 @@ var gulp          = require('gulp'),
     autoprefixer  = require('gulp-autoprefixer'),
     minifycss     = require('gulp-minify-css'),
     rename        = require('gulp-rename'),
+    images        = require('gulp-imagemin'),
     bourbon       = require('node-bourbon').includePaths,
     neat          = require('node-neat').includePaths;
 
@@ -16,7 +17,8 @@ var paths = {
   allScss:  'client/stylesheets/**/*.scss',
   css:      'build/stylesheets/main.css',
   cssDest:  'build/stylesheets',
-  html:     'index.html'
+  html:     'index.html',
+  imgDest:  'build/img'
 };
 
 
@@ -66,6 +68,14 @@ function notifyLiveReload(event) {
   });
 }
 
+// Image minifyer
+gulp.task('images', function(){
+  gulp.src(['client/images/*.jpg', 'client/images/*.png'])
+    .pipe(images({
+      progressive: true
+    }))
+    .pipe(gulp.dest(paths.imgDest));
+});
 
 /* Watchers
 -------------------------------------*/
