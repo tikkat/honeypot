@@ -1,0 +1,16 @@
+// Typography
+/* $default-font-size:    20px; */
+
+
+//Colors examples
+/* $header-color:          #fff; */
+/* $base-text-color:       #424242; */
+/* $base-background-color: #fdfdfd; */
+
+
+//Size adjustments
+
+// breakpoints examples
+$mobile:                new-breakpoint(max-width 480px);
+$desktop:               new-breakpoint(min-width 850px);
+$desktop-wide:          new-breakpoint(min-width 1280px);

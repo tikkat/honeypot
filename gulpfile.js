@@ -12,9 +12,10 @@ var gulp          = require('gulp'),
 /* Paths
 -------------------------------------*/
 var paths = {
-  scss:     'assets/stylesheets/main.scss',
-  css:      'assets/stylesheets/main.css',
-  cssDest:  'assets/stylesheets',
+  scss:     'client/stylesheets/main.scss',
+  allScss:  'client/stylesheets/**/*.scss',
+  css:      'build/stylesheets/main.css',
+  cssDest:  'build/stylesheets',
   html:     'index.html'
 };
 
@@ -69,7 +70,7 @@ function notifyLiveReload(event) {
 /* Watchers
 -------------------------------------*/
 gulp.task('watch', function() {
-  gulp.watch(paths.scss, ['styles']);
+  gulp.watch(paths.allScss, ['styles']);
   gulp.watch(paths.html, notifyLiveReload);
   gulp.watch(paths.css, notifyLiveReload);
 });

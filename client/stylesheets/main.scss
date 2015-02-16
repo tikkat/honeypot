@@ -1,9 +1,16 @@
-<<<<<<< Updated upstream
-@import "bourbon";
-@import "neat";
+// Reset
+@import "partials/normalize";
 
-*{
-  background-color: green;
-}
-=======
->>>>>>> Stashed changes
+// Third-party
+@import "vendor/bourbon/bourbon";
+@import "vendor/neat/neat";
+
+// Modules and Variables
+@import "partials/base";
+
+// Partials
+@import "partials/shame";
+@import "partials/buttons";
+@import "partials/typography";
+@import "partials/header";
+@import "partials/footer";
