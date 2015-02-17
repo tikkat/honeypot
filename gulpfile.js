@@ -5,9 +5,7 @@ var gulp          = require('gulp'),
     autoprefixer  = require('gulp-autoprefixer'),
     minifycss     = require('gulp-minify-css'),
     rename        = require('gulp-rename'),
-    images        = require('gulp-imagemin'),
-    bourbon       = require('node-bourbon').includePaths,
-    neat          = require('node-neat').includePaths;
+    images        = require('gulp-imagemin');
 
 
 /* Paths

@@ -4,9 +4,8 @@
   "description": "Product for the company Software Skills",
   "main": "gulpfile.js",
   "scripts": {
-    "lint": "./node_modules/.bin/jshint . --reporter=./node_modules/jshint-full-path/index.js",
-    "jscs": "./node_modules/.bin/jscs .",
-    "pretest": "npm run-script lint && npm run-script jscs",
+    "lint": "./node_modules/.bin/jshint .",
+    "pretest": "npm run-script lint",
     "test": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --recursive -R spec -r should",
     "posttest": "./node_modules/.bin/istanbul check-coverage && rm -rf coverage"
   },
@@ -22,9 +21,7 @@
     "gulp-rename": "^1.2.0",
     "gulp-sass": "^1.1.0",
     "istanbul": "^0.3.5",
-    "jscs": "^1.11.3",
     "jshint": "^2.6.0",
-    "jshint-full-path": "^1.1.1",
     "mocha": "^2.1.0",
     "node-bourbon": "^1.2.3",
     "node-neat": "^1.4.2",
