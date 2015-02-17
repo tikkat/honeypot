@@ -103,6 +103,6 @@ gulp.task('watch', function() {
 });
 
 
-gulp.task('default', ['express', 'styles', 'livereload', 'watch', 'js'], function() {
+gulp.task('default', ['express', 'styles', 'livereload', 'watch'], function() {
 
 });
