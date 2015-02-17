@@ -14,7 +14,11 @@ var gulp          = require('gulp'),
 -------------------------------------*/
 var paths = {
   scss:     'client/stylesheets/main.scss',
-  allScss:  'client/stylesheets/**/*.scss',
+  allScss:  [
+              'client/stylesheets/modules/**/*.scss',
+              'client/stylesheets/partials/**/*.scss',
+              'client/stylesheets/main.scss'
+            ],
   css:      'build/stylesheets/main.css',
   cssDest:  'build/stylesheets',
   html:     'index.html',
@@ -80,7 +84,7 @@ gulp.task('images', function(){
 /* Watchers
 -------------------------------------*/
 gulp.task('watch', function() {
-  gulp.watch(paths.allScss, ['styles']);
+  gulp.watch([paths.allScss], ['styles']);
   gulp.watch(paths.html, notifyLiveReload);
   gulp.watch(paths.css, notifyLiveReload);
 });
