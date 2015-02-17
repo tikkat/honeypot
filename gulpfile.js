@@ -18,7 +18,10 @@ var paths = {
   css:      'build/stylesheets/main.css',
   cssDest:  'build/stylesheets',
   html:     'index.html',
-  imgDest:  'build/img'
+  imgDest:  'build/img',
+  allJs:    'client/**/*.js',
+  js:       'client/app.module.js',
+  jsDest:   'build/js'
 };
 
 
@@ -68,6 +71,19 @@ function notifyLiveReload(event) {
   });
 }
 
+// Javascript minifyer
+// gulp.task('js', function () {
+//   gulp.src(['src/**/module.js', 'src/**/*.js'])
+//     .pipe(sourcemaps.init())
+//       .pipe(concat('app.js'))
+//       .pipe(ngAnnotate())
+//       .pipe(uglify())
+//     .pipe(sourcemaps.write())
+//     .pipe(gulp.dest('.'))
+// });
+// For later:
+// https://medium.com/@dickeyxxx/best-practices-for-building-angular-js-apps-266c1a4a6917
+
 // Image minifyer
 gulp.task('images', function(){
   gulp.src(['client/images/*.jpg', 'client/images/*.png'])
@@ -81,11 +97,12 @@ gulp.task('images', function(){
 -------------------------------------*/
 gulp.task('watch', function() {
   gulp.watch(paths.allScss, ['styles']);
+  gulp.watch(paths.allJs, ['js']);
   gulp.watch(paths.html, notifyLiveReload);
   gulp.watch(paths.css, notifyLiveReload);
 });
 
 
-gulp.task('default', ['express', 'styles', 'livereload', 'watch'], function() {
+gulp.task('default', ['express', 'styles', 'livereload', 'watch', 'js'], function() {
 
 });
