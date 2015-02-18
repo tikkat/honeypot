@@ -2,10 +2,15 @@ var express = require('express'),
   path = require('path'),
   logger = require('morgan'),
   cookieParser = require('cookie-parser'),
-  bodyParser = require('body-parser');
+  bodyParser = require('body-parser'),
+  mongoose = require('mongoose');
 
 var routes = require('./routes/index');
 
+// Connect to database
+mongoose.connect('mongodb://localhost/honeypot');
+
+// Init app
 var app = express();
 
 // uncomment after placing your favicon in /public
